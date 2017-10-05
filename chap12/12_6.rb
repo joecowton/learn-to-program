@@ -1,0 +1,5 @@
+puts(42.class)
+puts("string".class)
+puts(Time.new.class)
+puts(Time.class)
+puts(Class.class)

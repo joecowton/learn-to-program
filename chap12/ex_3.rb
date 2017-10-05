@@ -10,6 +10,7 @@ total = 0
 prev = 0
 index = roman.length - 1
 
+#takes last value and returns int
 while index >= 0
   c = roman[index].downcase
   index -=  1
@@ -18,16 +19,18 @@ while index >= 0
       puts 'This is not a valid roman numeral!'
   return
 end
+
+
   if val < prev
     val *= -1
   else
     prev = val
   end
-    total +=  val
+    total += val
  end
 
 total
 end
 
 puts(roman_to_integer('mcmxcix'))
-puts(roman_to_integer('CCCLXV'))
+puts(roman_to_integer('CCCLXVVV'))

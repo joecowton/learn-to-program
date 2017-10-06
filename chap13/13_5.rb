@@ -97,16 +97,29 @@ class Dragon
 
 end
 
-pet = Dragon.new 'Norbet'
+puts "what do you want to call your dragon"
+name = gets.chomp.capitalize
+pet = Dragon.new name
 
-puts "what would you like to do with #{@name}"
-action = gets.chomp
 while true
-if reply == 'yes'
-  true
-elsif reply == 'no'
-  false
-else
-  puts "please answer yes or no"
-  ask_recursively question
+  puts
+  puts "What would you like to do with #{name}?" +
+        "\nChoose from: feed / throw / rock / put to bed / exit"
+  action = gets.chomp
+
+  if action == 'exit'
+    exit
+  elsif action == 'feed'
+    pet.feed
+  elsif action == 'throw'
+    pet.toss
+  elsif action == 'rock'
+    pet.rock
+  elsif action == 'put to bed'
+    pet.put_to_bed
+  else
+    puts 'Huh? Do a command please'
+  end
+
+
 end
